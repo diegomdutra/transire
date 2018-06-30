@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="transirestoredbModelStoreContainer" CdmEntityContainer="transirestoredbEntities">
+    <EntitySetMapping Name="Product">
+      <EntityTypeMapping TypeName="transirestoredbModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="prod_cat_id" ColumnName="prod_cat_id" />
+          <ScalarProperty Name="prod_img_path" ColumnName="prod_img_path" />
+          <ScalarProperty Name="prod_price" ColumnName="prod_price" />
+          <ScalarProperty Name="prod_description" ColumnName="prod_description" />
+          <ScalarProperty Name="prod_name" ColumnName="prod_name" />
+          <ScalarProperty Name="prod_id" ColumnName="prod_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Category">
+      <EntityTypeMapping TypeName="transirestoredbModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="cat_name" ColumnName="cat_name" />
+          <ScalarProperty Name="cat_id" ColumnName="cat_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_insert_category" FunctionName="transirestoredbModel.Store.sp_insert_category" />
+    <FunctionImportMapping FunctionImportName="InsertCategory" FunctionName="transirestoredbModel.Store.sp_insert_category" />
+  </EntityContainerMapping>
+</Mapping>

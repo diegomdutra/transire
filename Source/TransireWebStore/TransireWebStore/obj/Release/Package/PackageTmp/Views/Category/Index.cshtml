@@ -1,0 +1,36 @@
+﻿@model IEnumerable<TransireWebStore.Models.Category>
+
+@{
+    ViewBag.Title = "Categorias";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Categorias</h2>
+
+<p>
+    @Html.ActionLink("Novo", "Create", null, new { @class = "btn btn-secondary" })
+</p>
+<table class="table table-striped">
+    <thead class="table-primary">
+        <tr class="text-white">
+            <th>
+                Nome
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cat_name)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.cat_id }, new {@class = "btn btn-primary m-1" })
+                    @Html.ActionLink("Excluír", "Delete", new { id = item.cat_id }, new { @class = "btn btn-primary m-1" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

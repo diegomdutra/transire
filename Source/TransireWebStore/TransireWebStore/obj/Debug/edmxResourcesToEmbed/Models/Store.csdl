@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="transirestoredbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="transirestoredbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Product" EntityType="transirestoredbModel.Product" />
+    <EntitySet Name="Category" EntityType="transirestoredbModel.Category" />
+    <AssociationSet Name="FK_Product_Category" Association="transirestoredbModel.FK_Product_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <FunctionImport Name="sp_insert_category">
+      <Parameter Name="category_name" Mode="In" Type="String" />
+      <Parameter Name="category_id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="InsertCategory" ReturnType="Collection(Int16)">
+      <Parameter Name="category_name" Mode="In" Type="String" />
+      <Parameter Name="category_id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="prod_id" />
+    </Key>
+    <Property Name="prod_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="prod_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="prod_description" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="prod_price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="prod_img_path" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="prod_cat_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Category" Relationship="transirestoredbModel.FK_Product_Category" FromRole="Product" ToRole="Category" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="cat_id" />
+    </Key>
+    <Property Name="cat_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cat_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Product" Relationship="transirestoredbModel.FK_Product_Category" FromRole="Category" ToRole="Product" />
+  </EntityType>
+  <Association Name="FK_Product_Category">
+    <End Type="transirestoredbModel.Category" Role="Category" Multiplicity="1" />
+    <End Type="transirestoredbModel.Product" Role="Product" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="cat_id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="prod_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

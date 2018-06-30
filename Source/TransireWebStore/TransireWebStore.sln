@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransireWebStore", "TransireWebStore\TransireWebStore.csproj", "{70CE8EB1-C531-4D4C-A380-05F1FCA18319}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransireWebStore.Tests", "TransireWebStore.Tests\TransireWebStore.Tests.csproj", "{1331CF2F-9140-4FFB-887A-9EF79FA9820F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70CE8EB1-C531-4D4C-A380-05F1FCA18319}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70CE8EB1-C531-4D4C-A380-05F1FCA18319}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70CE8EB1-C531-4D4C-A380-05F1FCA18319}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70CE8EB1-C531-4D4C-A380-05F1FCA18319}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1331CF2F-9140-4FFB-887A-9EF79FA9820F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1331CF2F-9140-4FFB-887A-9EF79FA9820F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1331CF2F-9140-4FFB-887A-9EF79FA9820F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1331CF2F-9140-4FFB-887A-9EF79FA9820F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CBFD21B9-7BFD-44C3-9284-6F6B3F3EE8CC}
+	EndGlobalSection
+EndGlobal

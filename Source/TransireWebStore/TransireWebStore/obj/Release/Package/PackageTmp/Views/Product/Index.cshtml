@@ -1,0 +1,53 @@
+﻿@model IEnumerable<TransireWebStore.Models.Product>
+
+@{
+    ViewBag.Title = "Produtos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Produtos</h2>
+
+<p>
+    @Html.ActionLink("Novo", "Create", null, new { @class = "btn btn-secondary" })
+</p>
+<table class="table table-striped">
+    <thead class="table-primary">
+        <tr class="text-white">
+            <th>
+                Nome
+            </th>
+            <th>
+                Descrição
+            </th>
+            <th>
+                Preço
+            </th>
+            <th>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.prod_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.prod_description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.prod_price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.prod_img_path)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.prod_id }, new { @class = "btn btn-primary m-1" }) 
+                    @Html.ActionLink("Excluír", "Delete", new { id = item.prod_id }, new { @class = "btn btn-primary m-1" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
