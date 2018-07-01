@@ -6,6 +6,7 @@ Projeto de avaliação técnica para o Instituto Transire
 	Desenvolvido em ASP.Net utilizando MVC 5, Entity Framework, Razor e Bootstrap.
 	Banco de dados SQL Server Express 2017
 2. Configuração
+	(Código Fonte e Solução do VS encontra-se na pasta Source)
 	Banco de dados:
 		- Executar Scripts localizados na pasta SQL Scripts na ordem:
 			1. create_db_transirestore.sql
